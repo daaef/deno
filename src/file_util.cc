@@ -78,7 +78,7 @@ class StartupDataCppWriter {
     WriteBinaryContentsAsCArray();
     file_ << "};\n";
     snprintf(buffer, sizeof(buffer), "static const int %s_blob_size = %llu;\n",
-             name_, static_cast<unsigned long long>(data_.size()));
+             name_, static_cast<uint64_t>(data_.size()));
     file_ << buffer;
     snprintf(buffer, sizeof(buffer), "static v8::StartupData %s_blob =\n",
              name_);
